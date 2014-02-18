@@ -1,0 +1,94 @@
+/* ------------------------------------------------   FILE: _theme-01-00-init.sass */
+
+/* apply normalize reset
++normalize
+
+// - - - - dimention setting  - - - - -
+
+$width: 200px
+
+
+// - - - - color setting  - - - - -
+
+
+// - - - - layout constant - - - - -
+
+
+// - - - - txt color - - - - -
+
+$gobal-text-color: #000
+$hover-link-color: #0b2a61
+
+// ------ Responsive setting
+
+$responsive_1: 500px   // Not sure if I have used this variable
+
+
+
+/* - - - - - - - - - - - - - - - -  Additional Reset  */
+
+/* ----- Remove Chrome's Orange Outline */
+*:focus
+  outline: none  
+
+/* ----- initialize form button */
+button, input[type="reset"], input[type="submit"], input[type="button"] 
+  border: 1px solid #ccc
+  background: #ececec
+  border-radius: 5px
+  padding: 5px 20px
+  margin-top: 10px
+
+/* ----- control Firefox's and WebKit's own resizable behavior */
+textarea
+  resize: none
+.resizable > textarea
+  resize: both
+
+/* ----- remove link outline  */
+a.image-link
+  +links-underline-style( none, $hover: false, $active: false, $visited: false, $focus: false)
+  
+/* ----- give it a dimension, don't trust auto mode */
+a.image-link
+  height: inherent
+
+/* ----- misc */
+.hidden
+  display: none 
+
+/* ----- global link reset */  
+a 
+  +links-underline-style( none, $hover: false, $active: false, $visited: false, $focus: false)
+  +links-underline-color( $gobal-text-color, $hover: false, $active: false, $visited: false, $focus: false)
+  +links-font-weight(normal, $hover: normal, $active: false, $visited: false, $focus: false)
+  +links-txt-color( $gobal-text-color , $hover: false, $active: false, $visited: false, $focus: false)
+
+/* ----- hyper link  */  
+a.link 
+  +links-underline-style( none, $hover: dotted, $active: dotted, $visited: dotted, $focus: dotted)
+  +links-underline-color( blue, $hover: false, $active: false, $visited: false, $focus: false)
+  +links-font-weight(normal, $hover: normal, $active: false, $visited: false, $focus: false)
+  +links-txt-color( blue , $hover: false, $active: false, $visited: false, $focus: false)
+  
+/* ----- list reset */
+ol, ul
+  list-style-type: none
+  
+  
+
+
+
+
+
+
+
+ 
+/* - - - - helper class */
+.v-space-25
+  +v-space(25px)
+.v-space-100
+  +v-space(100px)  
+  
+  
+     

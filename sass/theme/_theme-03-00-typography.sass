@@ -1,0 +1,86 @@
+/* -------------------------------------------------  FILE: _theme-03-00-typography.sass */
+
+/* ------ @font-face */
+
+// @font-face
+//   font-family: 'PetitLatinRegular'
+//   src: url('type/petitlatin-webfont.eot')
+//   src: url('type/petitlatin-webfont.eot?#iefix') format('embedded-opentype'), url('type/petitlatin-webfont.woff') format('woff'), url('type/petitlatin-webfont.ttf') format('truetype'), url('type/petitlatin-webfont.svg#PetitLatinRegular') format('svg')
+//   font-weight: normal
+//   font-style: normal
+//   
+// @font-face
+//   font-family: 'ChachieRegular'
+//   src: url('type/chachie-webfont.eot')
+//   src: url('type/chachie-webfont.eot?#iefix') format('embedded-opentype'), url('type/chachie-webfont.woff') format('woff'), url('type/chachie-webfont.ttf') format('truetype'), url('type/chachie-webfont.svg#ChachieRegular') format('svg')
+//   font-weight: normal
+//   font-style: normal
+  
+/* ------ font stacks definition */
+
+$font-sans: arial, sans-serif
+$font-serifs: Georgia, serif
+$font-mono: Consolas, Menlo, 'Courier New', monospace
+$font-chachie: ChachieRegular, $font-serifs
+$font-petitlatin: PetitLatinRegular, $font-sans
+
+
+// special use font stacks
+// ampersands
+$font-amp: $font-serifs
+// CAPS
+$font_cap: $font-sans
+
+$font-stack-arimo: 'Arimo', $font-sans
+$font-stack-lato: 'lato', $font-sans 
+$font-stack-tranjanProRegular: "TrajanProRegular", $font-serifs
+$font-stack-Times-New-Roman: "Times New Roman", Times, serif
+$font-stack-HelveticaCEREgular: HelveticaCERegular, $font-sans 
+$font-stack-GaramondPremierProRegular: GaramondPremierProRegular, $font-serifs
+$font-stack-dynamic-altitude : $font-sans
+
+/* ------ typography style */
+body
+  font-family: $font-sans
+  font-size: 14px
+  color: $gobal-text-color
+
+nav a
+  font-family: $font-sans
+  font-size: 40px
+
+
+$shadow-1: rgba(#777,.5) -2px 2px 5px
+$shadow-2: rgba(#777,.4) -3px 3px 5px
+$shadow-3: rgba(#777,.3) -4px 4px 5px
+$shadow-4: rgba(#777,.2) -8px 8px 5px
+
+ 
+h1 
+
+
+h2
+
+ 
+h3
+
+  
+.smaller-font
+
+         
+
+///* ------ typography link */
+//a 
+//  +links-underline-style( none, $hover: false, $active: false, $visited: false, $focus: false)
+//  +links-underline-color( $links-underline-color-inside-content-hover, $hover: $links-underline-color-inside-content-nothover, $active: false, $visited: false, $focus: false)
+//  +links-font-weight(normal, $hover: normal, $active: false, $visited: false, $focus: false)
+//  +links-txt-color( $links-txt-color-inside-content-nothover , $hover: $links-txt-color-inside-content-hover, $active: false, $visited: false, $focus: false)
+
+
+///* ----- site footer link */
+
+//.site-footer-link a 
+//  +links-underline-style( none, $hover: false, $active: false, $visited: false, $focus: false)
+//  +links-underline-color( $gobal-text-color, $hover: false, $active: false, $visited: false, $focus: false)
+//  +links-font-weight(normal, $hover: normal, $active: false, $visited: false, $focus: false)
+//  +links-txt-color( $gobal-text-color , $hover: $hover-link-color, $active: false, $visited: false, $focus: false)

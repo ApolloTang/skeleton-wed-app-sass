@@ -1,0 +1,150 @@
+/* -------------------------------------------------  FILE: _theme_maxins_links.sass
+ 
+/* ------ Defining Maxins for Links */
+
+// Usages examples:
+//    +links-underline-style( none, $hover: false, $active: false, $visited: false, $focus: false)
+//    +links-underline-color( inherent, $hover: false, $active: false, $visited: false, $focus: false)
+//    +links-font-weight(normal, $hover: false, $active: false, $visited: false, $focus: false)
+//    +links-txt-color( hsl(0, 0%, 85%) , $hover: hsl(0, 0%, 65%), $active: false, $visited: false, $focus: false)
+//    +links-font-size(normal, $hover: false, $active: false, $visited: false, $focus: false)
+
+
+=undo-links-underline
+  &
+    text-decoration: none
+    // border-bottom: inherit
+    border-bottom-style: inherit
+    &:visited
+      border-bottom-color: inherit
+    &:focus
+      border-bottom-color: inherit
+    &:hover
+      border-bottom-color: inherit
+    &:active
+      border-bottom-color: inherit
+      
+
+// replace underlines on links with bottom borders
+=links-underline-style($normal, $hover: false, $active: false, $visited: false, $focus: false)
+  &
+    text-decoration: none
+    border-bottom-width: 1px
+    border-bottom-style: $normal
+    &:visited
+      border-bottom-style: $normal
+    &:focus
+      border-bottom-style: $normal
+    &:hover
+      border-bottom-style: $normal
+    &:active
+      border-bottom-style: $normal
+    @if $visited
+      &:visited
+        border-bottom-style: $visited
+    @if $focus
+      &:focus
+        border-bottom-style: $focus
+    @if $hover
+      &:hover
+        border-bottom-style: $hover
+    @if $active
+      &:active
+        border-bottom-style: $active
+                
+=links-underline-color($normal, $hover: false, $active: false, $visited: false, $focus: false)
+  &
+    border-bottom-color:  $normal
+    &:visited
+      border-bottom-color: $normal
+    &:focus
+      border-bottom-color: $normal
+    &:hover
+      border-bottom-color: $normal
+    &:active
+      border-bottom-color: $normal
+    @if $visited
+      &:visited
+        border-bottom-color: $visited
+    @if $focus
+      &:focus
+        border-bottom-color: $focus
+    @if $hover
+      &:hover
+        border-bottom-color: $hover
+    @if $active
+      &:active
+        border-bottom-color: $active
+        
+=links-font-size($normal, $hover: false, $active: false, $visited: false, $focus: false)
+  &
+    font-size: $normal
+    &:visited
+      font-size: $normal
+    &:focus
+      font-size: $normal
+    &:hover
+      font-size: $normal
+    &:active
+      font-size: $normal
+    @if $visited
+      &:visited
+        font-size: $visited
+    @if $focus
+      &:focus
+        font-size: $focus
+    @if $hover
+      &:hover
+        font-size: $hover
+    @if $active
+      &:active
+        font-size: $active
+
+=links-font-weight($normal, $hover: false, $active: false, $visited: false, $focus: false)
+  &
+    font-weight: $normal
+    &:visited
+      font-weight: $normal
+    &:focus
+      font-weight: $normal
+    &:hover
+      font-weight: $normal
+    &:active
+      font-weight: $normal
+    @if $visited
+      &:visited
+        font-weight: $visited
+    @if $focus
+      &:focus
+        font-weight: $focus
+    @if $hover
+      &:hover
+        font-weight: $hover
+    @if $active
+      &:active
+        font-weight: $active
+
+=links-txt-color($normal, $hover: false, $active: false, $visited: false, $focus: false)
+  &
+    color: $normal
+    &:visited
+      color: $normal
+    &:focus
+      color: $normal
+    &:hover
+      color: $normal
+    &:active
+      color: $normal
+    @if $visited
+      &:visited
+        color: $visited
+    @if $focus
+      &:focus
+        color: $focus
+    @if $hover
+      &:hover
+        color: $hover
+    @if $active
+      &:active
+        color: $active
+
