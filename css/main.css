@@ -13,7 +13,7 @@
 /* -------------------------------------------------  FILE: _theme_maxins_links.sass */
 /* ------ Defining Maxins for Links */
 /* ------------------------------------------------   FILE: _theme-01-00-init.sass */
-/* apply normalize reset */
+/* ------  Apply normalize reset */
 /* normalize.css 2011-08-12T17:28 UTC · http://github.com/necolas/normalize.css */
 /* =============================================================================
  * HTML5 display definitions
@@ -538,6 +538,34 @@ ol, ul {
 }
 
 /* -------------------------------------------------  FILE: _theme-02-00-dev.sass */
+#skeletal_head {
+  background-color: #fcf8e3;
+}
+
+#skeletal_body {
+  background-color: #dff0d8;
+}
+
+#skeletal_sidebar {
+  background-color: #d9edf7;
+}
+
+#skeletal_main {
+  background-color: #f2dede;
+}
+
+#skeletal_foot {
+  background-color: #f2debe;
+}
+
+#tab_container {
+  background-color: #f2fede;
+}
+
+#content {
+  background-color: #e2dede;
+}
+
 /* -------------------------------------------------  FILE: _theme-03-00-typography.sass */
 /* ------ @font-face */
 /* ------ font stacks definition */
@@ -554,3 +582,50 @@ nav a {
 }
 
 /* -------------------------------------------------  FILE: _theme-04-00-layout.sass */
+#skeletal_head {
+  height: 100px;
+}
+
+#skeletal_sidebar {
+  float: left;
+  width: 300px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#skeletal_main {
+  margin-left: 300px;
+  overflow: hidden;
+}
+
+#skeletal_foot {
+  height: 50px;
+}
+
+#tab_container {
+  float: left;
+  width: 100%;
+}
+
+#workspace {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+
+#tool_bar {
+  float: left;
+  width: 150px;
+  height: 100%;
+  overflow: hidden;
+}
+
+#content {
+  margin-left: 100px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#tab_container > ul > li {
+  float: left;
+}

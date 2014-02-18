@@ -1,2 +1,48 @@
 /* -------------------------------------------------  FILE: _theme-04-00-layout.sass */
 
+$height_skeletal_head: 100px
+$height_skeletal_footer: 50px
+$width_sidebar: 300px
+$width_toolbar: 150px
+
+#skeletal_head
+  height: $height_skeletal_head
+
+#skeletal_body
+
+#skeletal_sidebar
+  float: left
+  width: $width_sidebar
+  height: 100%
+  overflow-y: scroll 
+  
+#skeletal_main
+  margin-left: $width_sidebar
+  overflow: hidden
+    
+#skeletal_foot
+  height: $height_skeletal_footer
+
+#tab_container
+  float: left
+  width: 100%
+  
+#workspace
+  float: left
+  width: 100%  
+  overflow: hidden
+  
+  
+#tool_bar
+  float: left
+  width: $width_toolbar
+  height: 100%
+  overflow: hidden
+  
+#content
+  margin-left: 100px
+  height: 100%
+  overflow-y: scroll  
+    
+#tab_container > ul > li
+  float: left
