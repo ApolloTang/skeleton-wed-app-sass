@@ -2,26 +2,51 @@
 
 $height_skeletal_head: 100px
 $height_skeletal_footer: 50px
-$width_sidebar: 300px
-$width_toolbar: 150px
+// $width_sidebar: 300px
+$width_sidebar:400px
+$width_toolbar: 80px
+
+
+
+html
+  overflow: hidden
+body
+  overflow: hidden
+
 
 #skeletal_head
   height: $height_skeletal_head
 
 #skeletal_body
+  position: relative
+  // height calculated by script
+  
+#skeletal_foot
+  height: $height_skeletal_footer
+
+
+
 
 #skeletal_sidebar
   float: left
   width: $width_sidebar
   height: 100%
-  overflow-y: scroll 
+  overflow-y: scroll
+  z-index: 50 
   
 #skeletal_main
-  margin-left: $width_sidebar
+  //margin-left: $width_sidebar
   overflow: hidden
+  z-index: 60
+  position: absolute
+  width: 1000px
+  left: 100px
+  
     
-#skeletal_foot
-  height: $height_skeletal_footer
+
+
+
+
 
 #tab_container
   float: left
