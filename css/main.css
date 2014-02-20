@@ -19,13 +19,11 @@
  * HTML5 display definitions
  * ========================================================================== */
 /* Corrects block display not defined in IE6/7/8/9 & FF3 */
-/* line 11, ../sass/partials/lib/reset/_normalize.sass */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
   display: block;
 }
 
 /* Corrects inline-block display not defined in IE6/7/8/9 & FF3 */
-/* line 17, ../sass/partials/lib/reset/_normalize.sass */
 audio, canvas, video {
   display: inline-block;
   *display: inline;
@@ -33,7 +31,6 @@ audio, canvas, video {
 }
 
 /* Prevents modern browsers from displaying 'audio' without controls */
-/* line 25, ../sass/partials/lib/reset/_normalize.sass */
 audio:not([controls]), [hidden] {
   display: none;
 }
@@ -48,7 +45,6 @@ audio:not([controls]), [hidden] {
  * 2. Keeps page centred in all browsers regardless of content height
  * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-/* line 43, ../sass/partials/lib/reset/_normalize.sass */
 html {
   font-size: 100%;
   /* 1 */
@@ -61,14 +57,12 @@ html {
 }
 
 /* Addresses margins handled incorrectly in IE6/7 */
-/* line 56, ../sass/partials/lib/reset/_normalize.sass */
 body {
   margin: 0;
   font-family: sans-serif;
 }
 
 /* Addresses font-family inconsistency between 'textarea' and other form elements. */
-/* line 63, ../sass/partials/lib/reset/_normalize.sass */
 button, input, select, textarea {
   font-family: sans-serif;
 }
@@ -76,19 +70,15 @@ button, input, select, textarea {
 /* =============================================================================
  * Links
  * ========================================================================== */
-/* line 70, ../sass/partials/lib/reset/_normalize.sass */
 a {
   color: #0000ee;
 }
-/* line 72, ../sass/partials/lib/reset/_normalize.sass */
 a:visited {
   color: #551a8b;
 }
-/* line 74, ../sass/partials/lib/reset/_normalize.sass */
 a:focus {
   outline: thin dotted;
 }
-/* line 76, ../sass/partials/lib/reset/_normalize.sass */
 a:hover, a:active {
   outline: 0;
 }
@@ -100,30 +90,25 @@ a:hover, a:active {
  * Typography
  * ========================================================================== */
 /* Addresses styling not present in IE7/8/9, S5, Chrome */
-/* line 93, ../sass/partials/lib/reset/_normalize.sass */
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
 /* Addresses style set to 'bolder' in FF3/4, S4/5, Chrome */
-/* line 99, ../sass/partials/lib/reset/_normalize.sass */
 b, strong {
   font-weight: bold;
 }
 
-/* line 102, ../sass/partials/lib/reset/_normalize.sass */
 blockquote {
   margin: 1em 40px;
 }
 
 /* Addresses styling not present in S5, Chrome */
-/* line 108, ../sass/partials/lib/reset/_normalize.sass */
 dfn {
   font-style: italic;
 }
 
 /* Addresses styling not present in IE6/7/8/9 */
-/* line 114, ../sass/partials/lib/reset/_normalize.sass */
 mark {
   background: yellow;
   color: black;
@@ -131,7 +116,6 @@ mark {
 
 /* Corrects font family set oddly in IE6, S4/5, Chrome
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59 */
-/* line 122, ../sass/partials/lib/reset/_normalize.sass */
 pre, code, kbd, samp {
   font-family: monospace, serif;
   _font-family: "courier new", monospace;
@@ -139,7 +123,6 @@ pre, code, kbd, samp {
 }
 
 /* Improves readability of pre-formatted text in all browsers */
-/* line 130, ../sass/partials/lib/reset/_normalize.sass */
 pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -149,25 +132,21 @@ pre {
 /* 1. Addresses CSS quotes not supported in IE6/7
  * 2. Addresses quote property not supported in S4 */
 /* 1 */
-/* line 141, ../sass/partials/lib/reset/_normalize.sass */
 q {
   quotes: none;
 }
-/* line 143, ../sass/partials/lib/reset/_normalize.sass */
 q:before, q:after {
   content: "";
   content: none;
 }
 
 /* 2 */
-/* line 149, ../sass/partials/lib/reset/_normalize.sass */
 small {
   font-size: 75%;
 }
 
 /* Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930 */
-/* line 156, ../sass/partials/lib/reset/_normalize.sass */
 sub {
   font-size: 75%;
   line-height: 0;
@@ -175,7 +154,6 @@ sub {
   vertical-align: baseline;
 }
 
-/* line 162, ../sass/partials/lib/reset/_normalize.sass */
 sup {
   font-size: 75%;
   line-height: 0;
@@ -184,7 +162,6 @@ sup {
   top: -0.5em;
 }
 
-/* line 169, ../sass/partials/lib/reset/_normalize.sass */
 sub {
   bottom: -0.25em;
 }
@@ -192,18 +169,15 @@ sub {
 /* =============================================================================
  * Lists
  * ========================================================================== */
-/* line 176, ../sass/partials/lib/reset/_normalize.sass */
 ul, ol {
   margin: 1em 0;
   padding: 0 0 0 40px;
 }
 
-/* line 180, ../sass/partials/lib/reset/_normalize.sass */
 dd {
   margin: 0 0 0 40px;
 }
 
-/* line 184, ../sass/partials/lib/reset/_normalize.sass */
 nav ul, nav ol {
   list-style: none;
   list-style-image: none;
@@ -215,7 +189,6 @@ nav ul, nav ol {
 /* 1. Removes border when inside 'a' element in IE6/7/8/9
  * 2. Improves image quality when scaled in IE7
  *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/ */
-/* line 197, ../sass/partials/lib/reset/_normalize.sass */
 img {
   border: 0;
   /* 1 */
@@ -224,7 +197,6 @@ img {
 }
 
 /* Corrects overflow displayed oddly in IE9 */
-/* line 206, ../sass/partials/lib/reset/_normalize.sass */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -233,7 +205,6 @@ svg:not(:root) {
  * Figures
  * ========================================================================== */
 /* Addresses margin not present in IE6/7/8/9, S5, O11 */
-/* line 216, ../sass/partials/lib/reset/_normalize.sass */
 figure, form {
   margin: 0;
 }
@@ -243,7 +214,6 @@ figure, form {
  * ========================================================================== */
 /* Corrects margin displayed oddly in IE6/7 */
 /* Define consistent margin and padding */
-/* line 229, ../sass/partials/lib/reset/_normalize.sass */
 fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
@@ -251,7 +221,6 @@ fieldset {
 
 /* 1. Corrects color not being inherited in IE6/7/8/9
  * 2. Corrects alignment displayed oddly in IE6/7 */
-/* line 237, ../sass/partials/lib/reset/_normalize.sass */
 legend {
   border: 0;
   /* 1 */
@@ -262,7 +231,6 @@ legend {
 /* 1. Corrects font size not being inherited in all browsers
  * 2. Addresses margins set differently in IE6/7, F3/4, S5, Chrome
  * 3. Improves appearance and consistency in all browsers */
-/* line 248, ../sass/partials/lib/reset/_normalize.sass */
 button, input, select, textarea {
   font-size: 100%;
   /* 1 */
@@ -276,7 +244,6 @@ button, input, select, textarea {
 
 /* 1. Addresses FF3/4 setting line-height using !important in the UA stylesheet
  * 2. Corrects inner spacing displayed oddly in IE6/7 */
-/* line 262, ../sass/partials/lib/reset/_normalize.sass */
 button, input {
   line-height: normal;
   /* 1 */
@@ -286,14 +253,12 @@ button, input {
 
 /* Corrects overlap and whitespace issue for buttons and inputs in IE6/7
  * Known issue: reintroduces inner spacing */
-/* line 273, ../sass/partials/lib/reset/_normalize.sass */
 table button, table input {
   *overflow: auto;
 }
 
 /* 1. Improves usability and consistency of cursor style between image-type 'input' and others
  * 2. Corrects inability to style clickable 'input' types in iOS */
-/* line 280, ../sass/partials/lib/reset/_normalize.sass */
 button, html input[type="button"] {
   cursor: pointer;
   /* 1 */
@@ -301,21 +266,18 @@ button, html input[type="button"] {
   /* 2 */
 }
 
-/* line 287, ../sass/partials/lib/reset/_normalize.sass */
 input[type="reset"], input[type="submit"] {
   cursor: pointer;
   /* 1 */
   -webkit-appearance: button;
   /* 2 */
 }
-/* line 292, ../sass/partials/lib/reset/_normalize.sass */
 input[type="checkbox"], input[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
 }
-/* line 297, ../sass/partials/lib/reset/_normalize.sass */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -324,7 +286,6 @@ input[type="search"] {
   /* 2 */
   box-sizing: content-box;
 }
-/* line 304, ../sass/partials/lib/reset/_normalize.sass */
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -336,7 +297,6 @@ input[type="search"]::-webkit-search-decoration {
 /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
 /* Corrects inner padding and border displayed oddly in FF3/4
  * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
-/* line 322, ../sass/partials/lib/reset/_normalize.sass */
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -344,7 +304,6 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 /* 1. Removes default vertical scrollbar in IE6/7/8/9
  * 2. Improves readability and alignment in all browsers */
-/* line 330, ../sass/partials/lib/reset/_normalize.sass */
 textarea {
   overflow: auto;
   /* 1 */
@@ -356,7 +315,6 @@ textarea {
  * Tables
  * ========================================================================== */
 /* Remove most spacing between table cells */
-/* line 343, ../sass/partials/lib/reset/_normalize.sass */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -364,13 +322,11 @@ table {
 
 /* - - - - - - - - - - - - - - - -  Additional Reset  */
 /* ----- Remove Chrome's Orange Outline */
-/* line 31, ../sass/theme/_theme-01-00-init.sass */
 *:focus {
   outline: none;
 }
 
 /* ----- initialize form button */
-/* line 35, ../sass/theme/_theme-01-00-init.sass */
 button, input[type="reset"], input[type="submit"], input[type="button"] {
   border: 1px solid #cccccc;
   background: #ececec;
@@ -380,259 +336,201 @@ button, input[type="reset"], input[type="submit"], input[type="button"] {
 }
 
 /* ----- control Firefox's and WebKit's own resizable behavior */
-/* line 43, ../sass/theme/_theme-01-00-init.sass */
 textarea {
   resize: none;
 }
 
-/* line 45, ../sass/theme/_theme-01-00-init.sass */
 .resizable > textarea {
   resize: both;
 }
 
 /* ----- remove link outline  */
-/* line 30, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.image-link {
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: none;
 }
-/* line 34, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.image-link:visited {
   border-bottom-style: none;
 }
-/* line 36, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.image-link:focus {
   border-bottom-style: none;
 }
-/* line 38, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.image-link:hover {
   border-bottom-style: none;
 }
-/* line 40, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.image-link:active {
   border-bottom-style: none;
 }
 
 /* ----- give it a dimension, don't trust auto mode */
-/* line 53, ../sass/theme/_theme-01-00-init.sass */
 a.image-link {
   height: inherent;
 }
 
 /* ----- misc */
-/* line 57, ../sass/theme/_theme-01-00-init.sass */
 .hidden {
   display: none;
 }
 
 /* ----- global link reset */
-/* line 30, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a {
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: none;
 }
-/* line 34, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:visited {
   border-bottom-style: none;
 }
-/* line 36, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:focus {
   border-bottom-style: none;
 }
-/* line 38, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:hover {
   border-bottom-style: none;
 }
-/* line 40, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:active {
   border-bottom-style: none;
 }
-/* line 56, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a {
   border-bottom-color: black;
 }
-/* line 58, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:visited {
   border-bottom-color: black;
 }
-/* line 60, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:focus {
   border-bottom-color: black;
 }
-/* line 62, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:hover {
   border-bottom-color: black;
 }
-/* line 64, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:active {
   border-bottom-color: black;
 }
-/* line 104, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a {
   font-weight: normal;
 }
-/* line 106, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:visited {
   font-weight: normal;
 }
-/* line 108, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:focus {
   font-weight: normal;
 }
-/* line 110, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:hover {
   font-weight: normal;
 }
-/* line 112, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:active {
   font-weight: normal;
 }
-/* line 121, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:hover {
   font-weight: normal;
 }
-/* line 128, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a {
   color: black;
 }
-/* line 130, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:visited {
   color: black;
 }
-/* line 132, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:focus {
   color: black;
 }
-/* line 134, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:hover {
   color: black;
 }
-/* line 136, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a:active {
   color: black;
 }
 
 /* ----- hyper link  */
-/* line 30, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link {
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: none;
 }
-/* line 34, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:visited {
   border-bottom-style: none;
 }
-/* line 36, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:focus {
   border-bottom-style: none;
 }
-/* line 38, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:hover {
   border-bottom-style: none;
 }
-/* line 40, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:active {
   border-bottom-style: none;
 }
-/* line 43, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:visited {
   border-bottom-style: dotted;
 }
-/* line 46, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:focus {
   border-bottom-style: dotted;
 }
-/* line 49, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:hover {
   border-bottom-style: dotted;
 }
-/* line 52, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:active {
   border-bottom-style: dotted;
 }
-/* line 56, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link {
   border-bottom-color: blue;
 }
-/* line 58, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:visited {
   border-bottom-color: blue;
 }
-/* line 60, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:focus {
   border-bottom-color: blue;
 }
-/* line 62, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:hover {
   border-bottom-color: blue;
 }
-/* line 64, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:active {
   border-bottom-color: blue;
 }
-/* line 104, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link {
   font-weight: normal;
 }
-/* line 106, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:visited {
   font-weight: normal;
 }
-/* line 108, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:focus {
   font-weight: normal;
 }
-/* line 110, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:hover {
   font-weight: normal;
 }
-/* line 112, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:active {
   font-weight: normal;
 }
-/* line 121, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:hover {
   font-weight: normal;
 }
-/* line 128, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link {
   color: blue;
 }
-/* line 130, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:visited {
   color: blue;
 }
-/* line 132, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:focus {
   color: blue;
 }
-/* line 134, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:hover {
   color: blue;
 }
-/* line 136, ../sass/theme/theme_lib/maxins/_theme_maxins_links.sass */
 a.link:active {
   color: blue;
 }
 
 /* ----- list reset */
-/* line 75, ../sass/theme/_theme-01-00-init.sass */
 ol, ul {
   list-style-type: none;
 }
 
 /* - - - - helper class */
-/* line 88, ../sass/theme/_theme-01-00-init.sass */
 .v-space-25 {
   float: left;
   width: 100%;
   height: 25px;
 }
 
-/* line 90, ../sass/theme/_theme-01-00-init.sass */
 .v-space-100 {
   float: left;
   width: 100%;
@@ -640,150 +538,148 @@ ol, ul {
 }
 
 /* -------------------------------------------------  FILE: _theme-02-00-dev.sass */
-/* line 17, ../sass/theme/_theme-02-00-dev.sass */
 #skeletal_head {
   background-color: #fcf8e3;
 }
 
-/* line 20, ../sass/theme/_theme-02-00-dev.sass */
 #skeletal_body {
   background-color: #dff0d8;
 }
 
-/* line 23, ../sass/theme/_theme-02-00-dev.sass */
 #skeletal_sidebar {
   background-color: #d9edf7;
 }
 
-/* line 26, ../sass/theme/_theme-02-00-dev.sass */
 #skeletal_main {
   background-color: #f2dede;
 }
 
-/* line 29, ../sass/theme/_theme-02-00-dev.sass */
 #skeletal_foot {
   background-color: #f2debe;
 }
 
-/* line 32, ../sass/theme/_theme-02-00-dev.sass */
 #tab_container {
   background-color: #f2fede;
 }
 
-/* line 35, ../sass/theme/_theme-02-00-dev.sass */
-#content {
+#workspace_content {
   background-color: #e2dede;
+}
+
+#workspace {
+  outline: red 1px solid;
 }
 
 /* -------------------------------------------------  FILE: _theme-03-00-typography.sass */
 /* ------ @font-face */
 /* ------ font stacks definition */
 /* ------ typography style */
-/* line 43, ../sass/theme/_theme-03-00-typography.sass */
 body {
   font-family: arial, sans-serif;
   font-size: 14px;
   color: black;
 }
 
-/* line 48, ../sass/theme/_theme-03-00-typography.sass */
 nav a {
   font-family: arial, sans-serif;
   font-size: 40px;
 }
 
 /* -------------------------------------------------  FILE: _theme-04-00-layout.sass */
-/* line 11, ../sass/theme/_theme-04-00-layout.sass */
 html {
   overflow: hidden;
 }
 
-/* line 13, ../sass/theme/_theme-04-00-layout.sass */
 body {
   overflow: hidden;
 }
 
-/* line 17, ../sass/theme/_theme-04-00-layout.sass */
 #skeletal_head {
   height: 100px;
 }
 
-/* line 20, ../sass/theme/_theme-04-00-layout.sass */
 #skeletal_body {
   position: relative;
 }
 
-/* line 24, ../sass/theme/_theme-04-00-layout.sass */
 #skeletal_foot {
   height: 50px;
 }
 
-/* line 30, ../sass/theme/_theme-04-00-layout.sass */
 #skeletal_sidebar {
   float: left;
-  width: 400px;
+  width: 800px;
   height: 100%;
   overflow-y: scroll;
-  z-index: 50;
 }
 
-/* line 37, ../sass/theme/_theme-04-00-layout.sass */
 #skeletal_main {
   overflow: hidden;
-  z-index: 60;
   position: absolute;
   width: 1000px;
   left: 100px;
+  outline: green 1px solid;
 }
 
-/* line 51, ../sass/theme/_theme-04-00-layout.sass */
+#grip_main {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background-color: tan;
+}
+
+#skeletal_main_inner {
+  margin-left: 50px;
+  overflow: hidden;
+  outline: blue 1px solid;
+  height: 100%;
+}
+
+/* z index for various container */
+#skeletal_sidebar {
+  z-index: 50;
+}
+
+#skeletal_main {
+  z-index: 60;
+}
+
 #tab_container {
   float: left;
   width: 100%;
 }
 
-/* line 55, ../sass/theme/_theme-04-00-layout.sass */
 #workspace {
   float: left;
   width: 100%;
   overflow: hidden;
 }
 
-/* line 61, ../sass/theme/_theme-04-00-layout.sass */
-#tool_bar {
+#workspace_tool_bar {
   float: left;
   width: 80px;
   height: 100%;
   overflow: hidden;
 }
 
-/* line 67, ../sass/theme/_theme-04-00-layout.sass */
-#content {
+#workspace_content {
   margin-left: 100px;
   height: 100%;
   overflow-y: scroll;
 }
 
-/* line 72, ../sass/theme/_theme-04-00-layout.sass */
 #tab_container > ul > li {
   float: left;
 }
 
-/* line 3, ../sass/theme/_theme-document-table.sass */
 td {
   min-width: 100px;
   white-space: nowrap;
 }
 
-/* line 7, ../sass/theme/_theme-document-table.sass */
 table tbody tr td:nth-child(5) {
   background-color: red;
   width: 200px;
   white-space: nowrap;
-  overflow: hidden;
-}
-
-/* line 13, ../sass/theme/_theme-document-table.sass */
-table {
   overflow: hidden;
 }

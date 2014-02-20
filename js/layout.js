@@ -12,61 +12,95 @@
 })(jQuery);
 	
 (function($){
-	// Equalized all container height in application body
-	var vph = ui.getViewPortDim().h;
-	var vpw = ui.getViewPortDim().w;
+		
+	var mouseIsPressed = false;
+	var mousePressedTimeOut;
 	
-
-	
-	
-	
-	
+	// layout monitoring 
+	adjustLayout( ui.getViewPortDim() );
+	$(window).resize( function() { adjustLayout( ui.getViewPortDim() ); });
 	function adjustLayout( viewPortDim ) {
-			var skeletalHeader_h = $("#skeletal_head").height();
-	var skeletalFooter_h = $("#skeletal_foot").height();
-	var tabContainer_h = $("#tab_container").height();
-	
-	var skeletalSideBar_w = $("#skeletal_sidebar").width();
-	var skeletal_main_w = $("#skeletal_main").width();
-	var skeletal_main_left = $("#skeletal_main").offset().left;
+		
+		// vertical adjustment
+		var skeletalHeader_h = $("#skeletal_head").height();
+		var skeletalFooter_h = $("#skeletal_foot").height();
+		var tabContainer_h   = $("#tab_container").height();
  
-		var new_skeletalBody_h = viewPortDim.h - skeletalHeader_h - skeletalFooter_h;
-		var new_workspace_h = new_skeletalBody_h - tabContainer_h
-		$("#skeletal_body").css({'height': new_skeletalBody_h });
-	    $("#workspace").css({'height': new_workspace_h });
+		var skeletalBody_h = viewPortDim.h - skeletalHeader_h - skeletalFooter_h;
+		var workspace_h = skeletalBody_h - tabContainer_h;	
+		$("#skeletal_body").css({'height': skeletalBody_h });
+	    $("#workspace").css({'height': workspace_h });
 	    
-	    var new_main_w = viewPortDim.w-skeletal_main_left;
-
+	    // horizontal adjustment
+		var skeletal_main_w    = $("#skeletal_main").width();
+		var skeletal_main_inner_w = skeletal_main_w - $("#grip_main").width();
+		var workspace_content_w = skeletal_main_inner_w - $("#workspace_tool_bar").width();
+		//var skeletal_main_left = $("#skeletal_main").offset().left;
+	    
+	    $("#skeletal_main").css({'width': viewPortDim.w});
+	    $("#skeletal_main_inner").css({'width': skeletal_main_inner_w});
+	    $("#workspace_content").css({'width': workspace_content_w});
+	    
+	    /*
+	    var new_main_w = viewPortDim.w; 
 	    if ( new_main_w > 800) {
 	    	$("#skeletal_main").css({'width': new_main_w});
 	    } else {
 	    	$("#skeletal_main").css({'width': 800});
 	    }
-	    
-	    
-	    
-	    
-
+        */
 	}
-	adjustLayout( ui.getViewPortDim() );
-	$(window).resize( function() { adjustLayout( ui.getViewPortDim() ); });
+	
+	// monitor key press
+	$("body").keydown(function(e) {
+		var skeletal_main_left = $("#skeletal_main").offset().left;	
+	
+	  if(e.keyCode == 37) { // left
+	  	skeletal_main_left = skeletal_main_left -10;    
+		$("#skeletal_main").css({'left': skeletal_main_left });
+		adjustLayout( ui.getViewPortDim() );
+	  }
+	  else if(e.keyCode == 39) { // right
+	  	skeletal_main_left = skeletal_main_left + 10; 
+		$("#skeletal_main").css({'left': skeletal_main_left});
+		adjustLayout( ui.getViewPortDim() );
+	  }
+	});
+	
+	// mornitor mouse pressed	
+	$("#grip_main").mousedown(function(e) {
+		e.preventDefault();
+	    mouseIsPressed = true;
+	    mousePressedTimeOut = setTimeout( GripMainIsOn, 50);
+	})
+	$(document).bind('mouseup', function() {
+	    mouseIsPressed = false;
+		GripMainIsOff();
+	    clearTimeout(mousePressedTimeOut);
+	});
 	
 	
-	
-$("body").keydown(function(e) {
-	var skeletal_main_left = $("#skeletal_main").offset().left;	
+	function GripMainIsOn() {
+		$(document).mousemove( function(e){
+			$(".app_title_container").text('GripMainIsON called');
+			if(mouseIsPressed) {
+				// read mouse coordinate
+        		$(".app_title_container").text(e.pageX + ', ' + e.pageY );
+        				$("#skeletal_main").css({'left': e.pageX});
+        	}
+        } );		
+		$("#grip_main").addClass('gripOn');
+	};
+	function GripMainIsOff() {
+		$(".app_title_container").text('GripMainIsOff called');
+		$("#grip_main").removeClass('gripOn');
+	};
 
-  if(e.keyCode == 37) { // left
-  	skeletal_main_left = skeletal_main_left -10;    
-	$("#skeletal_main").css({'left': skeletal_main_left });
-	adjustLayout( ui.getViewPortDim() );
-  }
-  else if(e.keyCode == 39) { // right
-  	skeletal_main_left = skeletal_main_left + 10; 
-	$("#skeletal_main").css({'left': skeletal_main_left});
-	adjustLayout( ui.getViewPortDim() );
-  }
-});
+
+		
+	
+
+	
 
 
 

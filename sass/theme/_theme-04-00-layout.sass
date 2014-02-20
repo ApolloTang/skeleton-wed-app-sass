@@ -3,8 +3,9 @@
 $height_skeletal_head: 100px
 $height_skeletal_footer: 50px
 // $width_sidebar: 300px
-$width_sidebar:400px
+$width_sidebar: 800px
 $width_toolbar: 80px
+$width_grip_main: 50px
 
 
 
@@ -27,44 +28,65 @@ body
 
 
 
+
 #skeletal_sidebar
   float: left
   width: $width_sidebar
   height: 100%
   overflow-y: scroll
-  z-index: 50 
+
   
 #skeletal_main
-  //margin-left: $width_sidebar
   overflow: hidden
-  z-index: 60
   position: absolute
   width: 1000px
   left: 100px
-  
+  +ol(green)
+
+
+#grip_main
+  position: absolute
+  width: $width_grip_main
+  height: 100%
+  +bc(tan)
     
-
-
-
+#skeletal_main_inner
+  // width calculated in script 
+  margin-left: $width_grip_main
+  overflow: hidden
+  +ol(blue)
+  height: 100%
+  
+/* 
+ z index for various container
+ 
+#skeletal_sidebar
+  z-index: 50 
+#skeletal_main
+  z-index: 60
+  
 
 
 #tab_container
   float: left
   width: 100%
-  
+
 #workspace
   float: left
   width: 100%  
   overflow: hidden
-  
-  
-#tool_bar
+
+
+
+
+#workspace_tool_bar
   float: left
   width: $width_toolbar
   height: 100%
   overflow: hidden
-  
-#content
+ 
+#workspace_content
+  // width calculated in script = (workspace width) - (workspace_tool_bar width) 
   margin-left: 100px
   height: 100%
   overflow-y: scroll  
