@@ -14,6 +14,12 @@ html
 body
   overflow: hidden
 
+/* 
+ z index for various container
+#skeletal_sidebar
+  z-index: 50 
+#skeletal_main
+  z-index: 60
 
 #skeletal_head
   height: $height_skeletal_head
@@ -24,9 +30,6 @@ body
   
 #skeletal_foot
   height: $height_skeletal_footer
-
-
-
 
 
 #skeletal_sidebar
@@ -43,27 +46,19 @@ body
   left: 100px
   +ol(green)
 
-
 #grip_main
   position: absolute
   width: $width_grip_main
   height: 100%
   +bc(tan)
-    
+
+/* 
+  width is calculated in script   
 #skeletal_main_inner
-  // width calculated in script 
   margin-left: $width_grip_main
   overflow: hidden
   +ol(blue)
   height: 100%
-  
-/* 
- z index for various container
- 
-#skeletal_sidebar
-  z-index: 50 
-#skeletal_main
-  z-index: 60
   
 
 
@@ -72,12 +67,10 @@ body
   width: 100%
 
 #workspace
+  // height is calculated in script = skeletalBody_h - tabContainer_h;
+  width: 100%
   float: left
-  width: 100%  
-  overflow: hidden
-
-
-
+  overflow: visible
 
 #workspace_tool_bar
   float: left
@@ -87,9 +80,11 @@ body
  
 #workspace_content
   // width calculated in script = (workspace width) - (workspace_tool_bar width) 
-  margin-left: 100px
+  margin-left: $width_toolbar
   height: 100%
-  overflow-y: scroll  
+  overflow-y: scroll
+
+ 
     
 #tab_container > ul > li
   float: left

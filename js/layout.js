@@ -3,11 +3,11 @@
 	window.ui = ui; 
 	ui.getViewPortDim =  function(){ return { 
 				w: $(window).width(),
-				h: $(window).height() }
+				h: $(window).height() };
 		};
 	ui.getDocDim =  function(){ return { 
 				w: $(document).width(),
-				h: $(document).height() }
+				h: $(document).height() };
 		};
 })(jQuery);
 	
@@ -19,8 +19,11 @@
 	// layout monitoring 
 	adjustLayout( ui.getViewPortDim() );
 	$(window).resize( function() { adjustLayout( ui.getViewPortDim() ); });
+
 	function adjustLayout( viewPortDim ) {
-		
+
+		var workspace_content_minimum_w = 1000;
+				
 		// vertical adjustment
 		var skeletalHeader_h = $("#skeletal_head").height();
 		var skeletalFooter_h = $("#skeletal_foot").height();
@@ -32,24 +35,19 @@
 	    $("#workspace").css({'height': workspace_h });
 	    
 	    // horizontal adjustment
-		var skeletal_main_w    = $("#skeletal_main").width();
-		var skeletal_main_inner_w = skeletal_main_w - $("#grip_main").width();
+	    $("#skeletal_main").css({'width': viewPortDim.w});
+		var skeletal_main_inner_w = viewPortDim.w - $("#grip_main").width();
 		var workspace_content_w = skeletal_main_inner_w - $("#workspace_tool_bar").width();
 		//var skeletal_main_left = $("#skeletal_main").offset().left;
 	    
-	    $("#skeletal_main").css({'width': viewPortDim.w});
+
 	    $("#skeletal_main_inner").css({'width': skeletal_main_inner_w});
-	    $("#workspace_content").css({'width': workspace_content_w});
-	    
-	    /*
-	    var new_main_w = viewPortDim.w; 
-	    if ( new_main_w > 800) {
-	    	$("#skeletal_main").css({'width': new_main_w});
-	    } else {
-	    	$("#skeletal_main").css({'width': 800});
-	    }
-        */
-	}
+
+		( workspace_content_w > workspace_content_minimum_w) 
+		                    ? $("#workspace_content").css({'width': workspace_content_w})
+		                    : $("#workspace_content").css({'width': workspace_content_minimum_w});
+	} // end-func djustLayout
+
 	
 	// monitor key press
 	$("body").keydown(function(e) {
