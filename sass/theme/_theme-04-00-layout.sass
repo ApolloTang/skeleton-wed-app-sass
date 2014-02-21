@@ -14,8 +14,7 @@ html
 body
   overflow: hidden
 
-/* 
- z index for various container
+/* z index for various container
 #skeletal_sidebar
   z-index: 50 
 #skeletal_main
@@ -52,9 +51,8 @@ body
   height: 100%
   +bc(tan)
 
-/* 
-  width is calculated in script   
 #skeletal_main_inner
+  /* width is calculated in script   
   margin-left: $width_grip_main
   overflow: hidden
   +ol(blue)
@@ -79,7 +77,12 @@ body
   overflow: hidden
  
 #workspace_content
-  // width calculated in script = (workspace width) - (workspace_tool_bar width) 
+  /* 
+   * workspace_content_w = ( workspace_content_w > workspace_content_minimum_w) 
+              ? workspace_content_w
+              : workspace_content_minimum_w;
+   */
+  display: absolute
   margin-left: $width_toolbar
   height: 100%
   overflow-y: scroll
@@ -88,3 +91,6 @@ body
     
 #tab_container > ul > li
   float: left
+  
+Table
+  display: none

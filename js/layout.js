@@ -22,7 +22,7 @@
 
 	function adjustLayout( viewPortDim ) {
 
-		var workspace_content_minimum_w = 1000;
+		var workspace_content_minimum_w = 500;
 				
 		// vertical adjustment
 		var skeletalHeader_h = $("#skeletal_head").height();
@@ -43,9 +43,14 @@
 
 	    $("#skeletal_main_inner").css({'width': skeletal_main_inner_w});
 
-		( workspace_content_w > workspace_content_minimum_w) 
-		                    ? $("#workspace_content").css({'width': workspace_content_w})
-		                    : $("#workspace_content").css({'width': workspace_content_minimum_w});
+		workspace_content_w = ( workspace_content_w > workspace_content_minimum_w) 
+							? workspace_content_w
+							: workspace_content_minimum_w;
+		$(".app_title_container").text(workspace_content_w);
+		$("#workspace_content").css({'width': workspace_content_w});					
+		// ( workspace_content_w > workspace_content_minimum_w) 
+		                    // ? $("#workspace_content").css({'width': workspace_content_w})
+		                    // : $("#workspace_content").css({'width': workspace_content_minimum_w});
 	} // end-func djustLayout
 
 	

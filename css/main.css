@@ -646,8 +646,8 @@ body {
   background-color: tan;
 }
 
-/* width is calculated in script    */
 #skeletal_main_inner {
+  /* width is calculated in script */
   margin-left: 50px;
   overflow: hidden;
   outline: blue 1px solid;
@@ -673,6 +673,11 @@ body {
 }
 
 #workspace_content {
+  /* workspace_content_w = ( workspace_content_w > workspace_content_minimum_w) 
+   *            ? workspace_content_w
+   *            : workspace_content_minimum_w;
+   */
+  display: absolute;
   margin-left: 80px;
   height: 100%;
   overflow-y: scroll;
@@ -680,6 +685,10 @@ body {
 
 #tab_container > ul > li {
   float: left;
+}
+
+Table {
+  display: none;
 }
 
 td {
