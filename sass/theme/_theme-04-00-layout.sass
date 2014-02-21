@@ -5,8 +5,7 @@ $height_skeletal_footer: 50px
 // $width_sidebar: 300px
 $width_sidebar: 800px
 $width_toolbar: 80px
-$width_grip_main: 50px
-
+$width_grip_main: 10px
 
 
 html
@@ -14,7 +13,7 @@ html
 body
   overflow: hidden
 
-/* z index for various container
+/* z index for various container */
 #skeletal_sidebar
   z-index: 50 
 #skeletal_main
@@ -42,17 +41,22 @@ body
   overflow: hidden
   position: absolute
   width: 1000px
-  left: 100px
-  +ol(green)
+  left: 0px
 
 #grip_main
   position: absolute
   width: $width_grip_main
   height: 100%
-  +bc(tan)
+  +bc(hsl(0,0,70))
+  &.gripOn
+    +bc(hsl(0,0,99))
+
+
+  
+  
 
 #skeletal_main_inner
-  /* width is calculated in script   
+  /* width is calculated in script   */
   margin-left: $width_grip_main
   overflow: hidden
   +ol(blue)
@@ -89,6 +93,13 @@ body
 
  
     
-#tab_container > ul > li
-  float: left
+#tab_container 
+  > #button_to_slide_main
+    float: left
+    +ol 
+  > ul
+    float: left
+    > li
+      float: left
+
   

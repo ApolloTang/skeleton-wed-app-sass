@@ -12,7 +12,7 @@
 })(jQuery);
 	
 (function($){
-	
+		
 	var mouseIsPressed = false;
 	var mousePressedTimeOut;
     var workspace_content_minimum_w = 1000;	
@@ -36,7 +36,6 @@
 	    $("#skeletal_main").css({'width': viewPortDim.w});
 		var skeletal_main_inner_w = viewPortDim.w - $("#grip_main").width();
 		var workspace_content_w = skeletal_main_inner_w - $("#workspace_tool_bar").width();
-		//var skeletal_main_left = $("#skeletal_main").offset().left;
 	    $("#workspace_content").css({'width': workspace_content_w});	
 	    $("#skeletal_main_inner").css({'width': skeletal_main_inner_w});
 		var workspace_content_inner_w = ( workspace_content_w > workspace_content_minimum_w) 
@@ -62,41 +61,59 @@
 	  }
 	});
 	
+
+    $("#button_to_slide_main").click(function(){
+    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
+		appConsole(skeletal_main_left);   	
+
+		if (skeletal_main_left > 0) $("#skeletal_main").animate({'left': 0});
+		if (skeletal_main_left == 0) $("#skeletal_main").animate({'left': 500});
+    });
+	
 	/* mornitor mouse pressed	 */
 	$("#grip_main").mousedown(function(e) {
 		e.preventDefault();
 	    mouseIsPressed = true;
 	    mousePressedTimeOut = setTimeout( GripMainIsOn, 50);
+	    document.body.style.cursor = 'col-resize';
 	})
 	$(document).bind('mouseup', function() {
 	    mouseIsPressed = false;
 		GripMainIsOff();
 	    clearTimeout(mousePressedTimeOut);
+	    document.body.style.cursor = '';
 	});
 		
 	function GripMainIsOn() {
 		$(document).mousemove( function(e){
-			$(".app_title_container").text('GripMainIsON called');
 			if(mouseIsPressed) {
+				appConsole('GripMainIsON called');
 				// read mouse coordinate
-        		$(".app_title_container").text(e.pageX + ', ' + e.pageY );
+        		$("#console1").text(e.pageX + ', ' + e.pageY );
         				$("#skeletal_main").css({'left': e.pageX});
         	}
         } );		
 		$("#grip_main").addClass('gripOn');
 	};
 	function GripMainIsOff() {
-		$(".app_title_container").text('GripMainIsOff called');
+		appConsole('GripMainIsOff called');
 		$("#grip_main").removeClass('gripOn');
 	};
 
 
 		
+
+
 	
-
-	
-
-
-
+	function appConsole( message ) {
+		$("#console1").prepend( message + '</br>');
+	}
+    appConsole( 1 );
+    appConsole( 2 );
+    
+    ui.showJobTree = function() {
+    	$("#skeletal_main").css({'left': 200});
+    }
+    	
 })(jQuery);
 	

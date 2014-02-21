@@ -522,6 +522,7 @@ a.link:active {
 /* ----- list reset */
 ol, ul {
   list-style-type: none;
+  margin: 0;
 }
 
 /* - - - - helper class */
@@ -635,20 +636,22 @@ body {
   overflow: hidden;
   position: absolute;
   width: 1000px;
-  left: 100px;
-  outline: green 1px solid;
+  left: 0px;
 }
 
 #grip_main {
   position: absolute;
-  width: 50px;
+  width: 10px;
   height: 100%;
-  background-color: tan;
+  background-color: #b3b3b3;
+}
+#grip_main.gripOn {
+  background-color: #fcfcfc;
 }
 
 #skeletal_main_inner {
-  /* width is calculated in script */
-  margin-left: 50px;
+  /* width is calculated in script   */
+  margin-left: 10px;
   overflow: hidden;
   outline: blue 1px solid;
   height: 100%;
@@ -683,6 +686,13 @@ body {
   overflow-y: scroll;
 }
 
+#tab_container > #button_to_slide_main {
+  float: left;
+  outline: red 1px solid;
+}
+#tab_container > ul {
+  float: left;
+}
 #tab_container > ul > li {
   float: left;
 }
@@ -697,4 +707,13 @@ table tbody tr td:nth-child(5) {
   width: 200px;
   white-space: nowrap;
   overflow: hidden;
+}
+
+/* -------------------------------------------------  FILE: _theme-ornamentation */
+#button_to_slide_main {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  vertical-align: middle;
 }
