@@ -12,49 +12,41 @@
 })(jQuery);
 	
 (function($){
-		
+	
 	var mouseIsPressed = false;
 	var mousePressedTimeOut;
+    var workspace_content_minimum_w = 1000;	
 	
-	// layout monitoring 
+	/* layout monitoring */ 
 	adjustLayout( ui.getViewPortDim() );
 	$(window).resize( function() { adjustLayout( ui.getViewPortDim() ); });
 
 	function adjustLayout( viewPortDim ) {
-
-		var workspace_content_minimum_w = 500;
-				
-		// vertical adjustment
+		
+		/* vertical adjustment */
 		var skeletalHeader_h = $("#skeletal_head").height();
 		var skeletalFooter_h = $("#skeletal_foot").height();
 		var tabContainer_h   = $("#tab_container").height();
- 
-		var skeletalBody_h = viewPortDim.h - skeletalHeader_h - skeletalFooter_h;
+ 		var skeletalBody_h = viewPortDim.h - skeletalHeader_h - skeletalFooter_h;
 		var workspace_h = skeletalBody_h - tabContainer_h;	
 		$("#skeletal_body").css({'height': skeletalBody_h });
 	    $("#workspace").css({'height': workspace_h });
 	    
-	    // horizontal adjustment
+	    /* horizontal adjustment */
 	    $("#skeletal_main").css({'width': viewPortDim.w});
 		var skeletal_main_inner_w = viewPortDim.w - $("#grip_main").width();
 		var workspace_content_w = skeletal_main_inner_w - $("#workspace_tool_bar").width();
 		//var skeletal_main_left = $("#skeletal_main").offset().left;
-	    
-
+	    $("#workspace_content").css({'width': workspace_content_w});	
 	    $("#skeletal_main_inner").css({'width': skeletal_main_inner_w});
-
-		workspace_content_w = ( workspace_content_w > workspace_content_minimum_w) 
+		var workspace_content_inner_w = ( workspace_content_w > workspace_content_minimum_w) 
 							? workspace_content_w
 							: workspace_content_minimum_w;
-		$(".app_title_container").text(workspace_content_w);
-		$("#workspace_content").css({'width': workspace_content_w});					
-		// ( workspace_content_w > workspace_content_minimum_w) 
-		                    // ? $("#workspace_content").css({'width': workspace_content_w})
-		                    // : $("#workspace_content").css({'width': workspace_content_minimum_w});
-	} // end-func djustLayout
+		$("#workspace_content_inner").css({'width': workspace_content_inner_w});					
+	} /* end-func djustLayout */
 
 	
-	// monitor key press
+	/* monitor key press */
 	$("body").keydown(function(e) {
 		var skeletal_main_left = $("#skeletal_main").offset().left;	
 	
@@ -70,7 +62,7 @@
 	  }
 	});
 	
-	// mornitor mouse pressed	
+	/* mornitor mouse pressed	 */
 	$("#grip_main").mousedown(function(e) {
 		e.preventDefault();
 	    mouseIsPressed = true;
@@ -81,8 +73,7 @@
 		GripMainIsOff();
 	    clearTimeout(mousePressedTimeOut);
 	});
-	
-	
+		
 	function GripMainIsOn() {
 		$(document).mousemove( function(e){
 			$(".app_title_container").text('GripMainIsON called');

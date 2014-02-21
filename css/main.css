@@ -687,10 +687,6 @@ body {
   float: left;
 }
 
-Table {
-  display: none;
-}
-
 td {
   min-width: 100px;
   white-space: nowrap;
