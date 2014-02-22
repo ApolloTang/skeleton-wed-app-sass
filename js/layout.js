@@ -52,11 +52,13 @@
 	  if(e.keyCode == 37) { // left
 	  	skeletal_main_left = skeletal_main_left -10;    
 		$("#skeletal_main").css({'left': skeletal_main_left });
+		$("#skeletal_sidebar").width(skeletal_main_left);
 		adjustLayout( ui.getViewPortDim() );
 	  }
 	  else if(e.keyCode == 39) { // right
 	  	skeletal_main_left = skeletal_main_left + 10; 
 		$("#skeletal_main").css({'left': skeletal_main_left});
+		$("#skeletal_sidebar").width(skeletal_main_left);
 		adjustLayout( ui.getViewPortDim() );
 	  }
 	});
@@ -66,11 +68,14 @@
     	var skeletal_main_left = $("#skeletal_main").offset().left; 	
 		if (skeletal_main_left > 0) {
 			$("#skeletal_main").animate({'left': 0});
+			$("#skeletal_sidebar").animate({'width': 0});
+		
 			$("#button_to_slide_main").html('&gt;');
 		}
 		if (skeletal_main_left == 0) {
 			$("#skeletal_main").animate({'left': 500});
 			$("#button_to_slide_main").html('&lt;');
+			$("#skeletal_sidebar").animate({'width': 500});
 		}
     });
 	
@@ -95,6 +100,7 @@
 				// read mouse coordinate
         		$("#console1").text(e.pageX + ', ' + e.pageY );
         				$("#skeletal_main").css({'left': e.pageX});
+        				$("#skeletal_sidebar").width(e.pageX);
 		
         	}
         } );		

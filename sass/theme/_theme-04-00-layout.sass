@@ -2,8 +2,7 @@
 
 $height_skeletal_head: 100px
 $height_skeletal_footer: 50px
-// $width_sidebar: 300px
-$width_sidebar: 800px
+$width_sidebar_inner: 300px
 $width_toolbar: 80px
 $width_grip_main: 10px
 
@@ -31,11 +30,16 @@ body
 
 
 #skeletal_sidebar
+  
   float: left
-  width: $width_sidebar
+  width: 0
   height: 100%
-  overflow-y: scroll
+  overflow-x: hidden
+  overflow-y: auto
 
+#skeletal_sidebar_inner
+  width: $width_sidebar_inner
+  height: 100%
   
 #skeletal_main
   overflow: hidden
@@ -62,6 +66,7 @@ body
   +ol(blue)
   height: 100%
   
+
 
 
 #tab_container
