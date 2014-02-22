@@ -3,45 +3,45 @@ table
   table-layout: fixed
   overflow: hidden
   white-space: break-word
-  
 td
-  width: 300px
-
-  
+td.c1
+  +bc(red) 
+td:first-child + td + td + td + td
+  +bc(yellow)
+  width: 400px
 /*
   table tbody tr td:nth-child(5)
     background-color: red
     white-space: nowrap
     overflow: hidden*/
 
- 
-td.col1
-  +bc(red)
-  
-td:first-child + td + td + td + td
-  +bc(yellow)
-  width: 400px
-  //table-layout: fixed
 
-
-.div_table
-  overflow: hidden
-.div_row
-  white-space: nowrap
-  float: left
-  overflow: hidden
-  white-space: nowrap
-  float: left
+#inline_block
+  .div_table
+    overflow: hidden
+  .div_row
+    white-space: nowrap
+    float: left
+    overflow: hidden
+    white-space: nowrap
+    float: left
+  .div_cell
+    //display: table-cell
+    display: inline-block
+    overflow: hidden
+    border-right: 1px solid #aaa
+    padding: 5px 10px 5px 10px
+    width: 100px
+  .div_cell.c_fundname
+    max-width: 500px
   
-.div_cell
-  //display: table-cell
-  display: inline-block
-  overflow: hidden
-  border-right: 1px solid #aaa
-  padding: 5px 10px 5px 10px
-  width: 100px
-.div_cell.c_fundname
-  max-width: 500px
-  
-  
-    
+#table_display  
+  .div_table
+    display: table
+  .div_row
+    display: table-row
+  .div_cell
+    display: table-cell
+    border: 1px solid #aaa
+  .div_cell.c_fundname
+    max-width: 500px    

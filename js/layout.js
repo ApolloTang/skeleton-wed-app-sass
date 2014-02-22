@@ -15,7 +15,7 @@
 		
 	var mouseIsPressed = false;
 	var mousePressedTimeOut;
-    var workspace_content_minimum_w = 500;	
+    var workspace_content_minimum_w = 1000;	
 	
 	/* layout monitoring */ 
 	adjustLayout( ui.getViewPortDim() );
