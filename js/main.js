@@ -32,9 +32,9 @@ require(
         function delayExecute($, _, ui) {  debugger; }
             
         $(document).ready( function ($, _) {
-             debugger;
-            require( ['modules/ui'],  function (ui) {
-                        debugger;
+             //debugger;
+            require( ['modules/ui', 'modules/document_list'],  function (ui, document_list) {
+                        //debugger;
             });
             // setTimeout( delayExecute, 2000 );
 

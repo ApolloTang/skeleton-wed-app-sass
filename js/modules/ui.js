@@ -117,7 +117,7 @@ function ($) {
 		$("#console1").prepend( message + '</br>');
 	}   
     
-    debugger;
+
     /* layout monitoring */ 
 	adjustLayout( ui.getViewPortDim() );
 	$(window).resize( function() { adjustLayout( ui.getViewPortDim() ); });
