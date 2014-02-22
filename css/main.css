@@ -665,7 +665,7 @@ body {
 #workspace {
   width: 100%;
   float: left;
-  overflow: visible;
+  overflow: hidden;
 }
 
 #workspace_tool_bar {
@@ -697,16 +697,51 @@ body {
   float: left;
 }
 
-td {
-  min-width: 100px;
-  white-space: nowrap;
+table {
+  table-layout: fixed;
+  overflow: hidden;
+  white-space: break-word;
 }
 
-table tbody tr td:nth-child(5) {
+td {
+  width: 300px;
+}
+
+/* table tbody tr td:nth-child(5)
+ *   background-color: red
+ *   white-space: nowrap
+ *   overflow: hidden */
+td.col1 {
   background-color: red;
-  width: 200px;
-  white-space: nowrap;
+}
+
+td:first-child + td + td + td + td {
+  background-color: yellow;
+  width: 400px;
+}
+
+.div_table {
   overflow: hidden;
+}
+
+.div_row {
+  white-space: nowrap;
+  float: left;
+  overflow: hidden;
+  white-space: nowrap;
+  float: left;
+}
+
+.div_cell {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 1px solid #aaaaaa;
+  padding: 5px 10px 5px 10px;
+  width: 100px;
+}
+
+.div_cell.c_fundname {
+  max-width: 500px;
 }
 
 /* -------------------------------------------------  FILE: _theme-ornamentation */

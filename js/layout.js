@@ -15,7 +15,7 @@
 		
 	var mouseIsPressed = false;
 	var mousePressedTimeOut;
-    var workspace_content_minimum_w = 1000;	
+    var workspace_content_minimum_w = 500;	
 	
 	/* layout monitoring */ 
 	adjustLayout( ui.getViewPortDim() );
@@ -64,10 +64,14 @@
 
     $("#button_to_slide_main").click(function(){
     	var skeletal_main_left = $("#skeletal_main").offset().left; 	
-		appConsole(skeletal_main_left);   	
-
-		if (skeletal_main_left > 0) $("#skeletal_main").animate({'left': 0});
-		if (skeletal_main_left == 0) $("#skeletal_main").animate({'left': 500});
+		if (skeletal_main_left > 0) {
+			$("#skeletal_main").animate({'left': 0});
+			$("#button_to_slide_main").html('&gt;');
+		}
+		if (skeletal_main_left == 0) {
+			$("#skeletal_main").animate({'left': 500});
+			$("#button_to_slide_main").html('&lt;');
+		}
     });
 	
 	/* mornitor mouse pressed	 */
@@ -91,6 +95,7 @@
 				// read mouse coordinate
         		$("#console1").text(e.pageX + ', ' + e.pageY );
         				$("#skeletal_main").css({'left': e.pageX});
+		
         	}
         } );		
 		$("#grip_main").addClass('gripOn');
@@ -98,6 +103,10 @@
 	function GripMainIsOff() {
 		appConsole('GripMainIsOff called');
 		$("#grip_main").removeClass('gripOn');
+		var skeletal_main_left = $("#skeletal_main").offset().left; 	
+		if (skeletal_main_left > 0) {
+ 			$("#button_to_slide_main").html('&lt;');
+		}
 	};
 
 
@@ -107,12 +116,15 @@
 	
 	function appConsole( message ) {
 		$("#console1").prepend( message + '</br>');
-	}
-    appConsole( 1 );
-    appConsole( 2 );
+	}   
     
-    ui.showJobTree = function() {
-    	$("#skeletal_main").css({'left': 200});
+    ui.showJob = function() {
+    	    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
+		if (skeletal_main_left == 0) $("#skeletal_main").animate({'left': 500});
+    }
+    ui.hideJob = function() {
+    	    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
+		if (skeletal_main_left > 0) $("#skeletal_main").animate({'left': 0});
     }
     	
 })(jQuery);
