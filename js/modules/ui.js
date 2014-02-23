@@ -63,8 +63,10 @@ function ($) {
 	
 
     $("#button_to_slide_main").click(function(){
+    	console.log('slide button clicked');
     	var skeletal_main_left = $("#skeletal_main").offset().left; 	
 		if (skeletal_main_left > 0) {
+			console.log('should close now');
 			$("#skeletal_main").animate({'left': 0});
 			$("#skeletal_sidebar").animate({'width': 0});
 		
@@ -83,13 +85,15 @@ function ($) {
 	    mouseIsPressed = true;
 	    mousePressedTimeOut = setTimeout( GripMainIsOn, 50);
 	    document.body.style.cursor = 'col-resize';
+
+		$(document).one('mouseup', function() {
+		    mouseIsPressed = false;
+			GripMainIsOff();
+		    clearTimeout(mousePressedTimeOut);
+		    document.body.style.cursor = '';
+		});
 	})
-	$(document).bind('mouseup', function() {
-	    mouseIsPressed = false;
-		GripMainIsOff();
-	    clearTimeout(mousePressedTimeOut);
-	    document.body.style.cursor = '';
-	});
+
 		
 	function GripMainIsOn() {
 		$(document).mousemove( function(e){
@@ -97,8 +101,8 @@ function ($) {
 				appConsole('GripMainIsON called');
 				// read mouse coordinate
         		$("#console1").text(e.pageX + ', ' + e.pageY );
-        				$("#skeletal_main").css({'left': e.pageX});
-        				$("#skeletal_sidebar").width(e.pageX);
+        		$("#skeletal_main").css({'left': e.pageX});
+        		$("#skeletal_sidebar").width(e.pageX);
 		
         	}
         } );		

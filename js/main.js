@@ -29,15 +29,15 @@ require(
         
         // resolve the asp.net/underscore conflict for < % tags
         _.templateSettings = {
-            interpolate: /\{\{(.+?)\}\}/gim,  // print value: {{ value_name }}
-            evaluate: /\{%([\s\S]+?)%\}/gim,  // excute code: {% code_to_execute %}
-            escape: /\{%-([\s\S]+?)%\}/gim    // excape HTML: {%- <script> %} prints &lt;script&gt;
+            interpolate: /\{\{(.+?)\}\}/gim,     // print value: {{ value_name }}
+            evaluate:    /\{%([\s\S]+?)%\}/gim,  // excute code: {% code_to_execute %}
+            escape:      /\{%-([\s\S]+?)%\}/gim  // excape HTML: {%- <script> %} prints &lt;script&gt;
         };
   
-        function delayExecute() {    
+        function delayExecute() { 
+        	// all businus logo goes in here   
             require( ['modules/document_list'],  function (document_list) { 
-            	LD.ui.showJob();
-            	LD.message = 'job list pannel opened';
+
             	console.log('document_list:',document_list );
             });
         }
