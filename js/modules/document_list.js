@@ -1,9 +1,8 @@
 define(['text!template/test-template.html'], function (test_html) {
         
-        var document_list = "eefds sfasdfad document_list";
-        
+       var document_list = '';
 
-		LD.ui.showJob();
+		LD.ui.animateMainX(500)
         LD.message = 'job list pannel opened';
 
        	return document_list;
