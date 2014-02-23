@@ -1,9 +1,14 @@
 define(['jquery'], 
 function ($) {
-
-   
-
 	var ui = {};
+	var _ui = {};
+	
+	var mouseIsPressed = false;
+	var mousePressedTimeOut;
+    var workspace_content_minimum_w = 1000;	
+    var A1 = function() { console.log('say some thing');};
+    AAA = function() { console.log('say some thing');}; 
+
 	ui.getViewPortDim =  function(){ return { 
 				w: $(window).width(),
 				h: $(window).height() };
@@ -12,12 +17,18 @@ function ($) {
 				w: $(document).width(),
 				h: $(document).height() };
 		};
-
-	var mouseIsPressed = false;
-	var mousePressedTimeOut;
-    var workspace_content_minimum_w = 1000;	
-	
-
+    // _ui.get_main_left = function() {
+    	// return $("#skeletal_main").offset().left;
+    // };
+    
+    _ui.get_main_left = function() {
+    	return $("#skeletal_main").offset().left;
+    };
+    
+    function A2() { 
+    	var a = 'a';
+    	console.log('say some thing');
+    }
 
 	function adjustLayout( viewPortDim ) {
 		
@@ -44,21 +55,25 @@ function ($) {
 
 	
 	/* monitor key press */
-	$("body").keydown(function(e) {
-		var skeletal_main_left = $("#skeletal_main").offset().left;	
-	
-	  if(e.keyCode == 37) { // left
-	  	skeletal_main_left = skeletal_main_left -10;    
-		$("#skeletal_main").css({'left': skeletal_main_left });
-		$("#skeletal_sidebar").width(skeletal_main_left);
-		adjustLayout( ui.getViewPortDim() );
-	  }
-	  else if(e.keyCode == 39) { // right
-	  	skeletal_main_left = skeletal_main_left + 10; 
-		$("#skeletal_main").css({'left': skeletal_main_left});
-		$("#skeletal_sidebar").width(skeletal_main_left);
-		adjustLayout( ui.getViewPortDim() );
-	  }
+	$("body").bind('keydown', function(e) {
+		var main_left = _ui.get_main_left();
+		//debugger;
+		switch (e.keyCode.toString()) {
+			case "37": // left arrow
+				main_left = main_left -10;    
+				$("#skeletal_main").css({'left': main_left });
+				$("#skeletal_sidebar").width(main_left);
+				adjustLayout( ui.getViewPortDim() );
+				break;
+			case "39":  // right arrow
+				main_left = main_left +10;    
+				$("#skeletal_main").css({'left': main_left });
+				$("#skeletal_sidebar").width(main_left);
+				adjustLayout( ui.getViewPortDim() );
+				break;  
+			default:
+			    /* every thing else press */
+		}  
 	});
 	
 
@@ -119,15 +134,17 @@ function ($) {
 
 	function appConsole( message ) {
 		$("#console1").prepend( message + '</br>');
-	}   
+	}
+	   
     
 
     /* layout monitoring */ 
 	adjustLayout( ui.getViewPortDim() );
 	$(window).resize( function() { adjustLayout( ui.getViewPortDim() ); });
     
+    ui.console = appConsole;
     ui.showJob = function() {
-    	    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
+    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
 		if (skeletal_main_left == 0) {
 			$("#skeletal_main").animate({'left': 500});
 			$("#skeletal_sidebar").animate({'width': 500});
@@ -135,7 +152,7 @@ function ($) {
 			}
     }
     ui.hideJob = function() {
-    	    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
+    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
 		if (skeletal_main_left > 0) {
 		$("#skeletal_main").animate({'left': 0});
 		$("#skeletal_sidebar").animate({'width': 0});

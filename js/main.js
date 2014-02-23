@@ -38,6 +38,7 @@ require(
         	// all businus logo goes in here   
             require( ['modules/document_list'],  function (document_list) { 
 
+   
             	console.log('document_list:',document_list );
             });
         }
