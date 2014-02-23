@@ -20,7 +20,13 @@
 require(
     ['jquery', 'underscore'],
     function ($, _) {
-    
+    	
+        window.LD = { 
+        	 status: 'healthy'
+        	 , state: 'home'
+        	 , message : '' 
+        };
+        
         // resolve the asp.net/underscore conflict for < % tags
         _.templateSettings = {
             interpolate: /\{\{(.+?)\}\}/gim,  // print value: {{ value_name }}
@@ -28,18 +34,17 @@ require(
             escape: /\{%-([\s\S]+?)%\}/gim    // excape HTML: {%- <script> %} prints &lt;script&gt;
         };
   
-        //
-        function delayExecute($, _, ui) {  debugger; }
-            
-        $(document).ready( function ($, _) {
-             //debugger;
-            require( ['modules/ui', 'modules/document_list'],  function (ui, document_list) {
-                        //debugger;
+        function delayExecute() {    
+            require( ['modules/document_list'],  function (document_list) { 
+            	LD.ui.showJob();
+            	LD.message = 'job list pannel opened';
+            	console.log('document_list:',document_list );
             });
-            // setTimeout( delayExecute, 2000 );
-
+        }
+            
+        $(document).ready( function ($, _) {       	
+            require( ['modules/ui'],  function (ui) {LD.ui = ui; });
+            setTimeout( delayExecute, 2000 );
         });
-
-
     }
 );

@@ -124,11 +124,20 @@ function ($) {
     
     ui.showJob = function() {
     	    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
-		if (skeletal_main_left == 0) $("#skeletal_main").animate({'left': 500});
+		if (skeletal_main_left == 0) {
+			$("#skeletal_main").animate({'left': 500});
+			$("#skeletal_sidebar").animate({'width': 500});
+			
+			}
     }
     ui.hideJob = function() {
     	    	var skeletal_main_left = $("#skeletal_main").offset().left; 	
-		if (skeletal_main_left > 0) $("#skeletal_main").animate({'left': 0});
+		if (skeletal_main_left > 0) {
+		$("#skeletal_main").animate({'left': 0});
+		$("#skeletal_sidebar").animate({'width': 0});
+		
+			$("#button_to_slide_main").html('&gt;');
+		}
     }
          
         
