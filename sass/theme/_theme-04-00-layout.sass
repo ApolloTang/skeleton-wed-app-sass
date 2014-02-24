@@ -2,7 +2,7 @@
 
 $height_skeletal_head: 100px
 $height_skeletal_footer: 50px
-$width_sidebar_inner: 300px
+$width_sidebar_content: 600px
 $width_toolbar: 80px
 $width_grip_main: 10px
 
@@ -31,14 +31,15 @@ body
 
 #skeletal_sidebar
   float: left
-  width: 0
+  width: $width_sidebar_content
   height: 100%
   overflow-x: hidden
   overflow-y: auto
 
 #skeletal_sidebar_content
-  width: $width_sidebar_inner
-  height: 100%
+  width: $width_sidebar_content
+  overflow: hidden
+  +clearfix
   
 #skeletal_main
   overflow: hidden

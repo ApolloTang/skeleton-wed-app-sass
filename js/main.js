@@ -37,7 +37,17 @@ require(
         function delayExecute() { 
             
             require( ['modules/ui', 'modules/load_jobs'], function (ui, jobs) {
+                $(".job-item").click(function(){ LD.ui.console('job item clicked')
                 
+                /*  
+                  1. create instant of job-workflow 
+                  2. insert tab.
+                  3. load documnet table.
+                  4. load tool.
+                  
+                */
+                });
+                    
             });
 
             // require( ['modules/document_list'],  function (document_list) {                 

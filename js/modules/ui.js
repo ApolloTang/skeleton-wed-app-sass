@@ -5,7 +5,7 @@ function ($) {
 	
 	var mouseIsPressed = false;
 	var mousePressedTimeOut;
-    var workspace_content_minimum_w = 1000;	
+    var workspace_content_minimum_w = 600;	
 
 	ui.getViewPortDim =  function(){ return { 
 				w: $(window).width(),
@@ -45,7 +45,7 @@ function ($) {
 
 	_ui.upDateMainX  = function(x) {
 		var icon = '';
-		if ( x >= 0 && x <= 500 ) {
+		if ( x >= 0 && x <= workspace_content_minimum_w ) {
 			$("#skeletal_main").css({'left': x });
 			$("#skeletal_sidebar").width(x);
 			_ui.upDateLayout( ui.getViewPortDim() );
